@@ -6,3 +6,39 @@
     5. Portable Langauge.
 
 # FILE EXTENSION : ".py"
+
+
+# Data types in python :
+    > Python supports following data types-
+        1.Test
+            *str (default)
+        2.Numerical
+            *int
+            *float
+            *complex
+        3.Sequence
+            *list
+            *tuple
+            *range
+        4.Mapping
+            *dict(dictionery)
+        5.Boolean
+            *bool
+        6.Binary 
+            *bytes
+            *bytearray
+            *memoryview
+        7.Void
+            *none
+    
+# Facts 
+
+# No 1(bool input)
+    1. Bool : In bool() , every non-empty string is considers as True // no matter you type true/false .
+            want actual boolean value as result.
+            try:
+            a = bool(input("True/False : "))
+            answer = a == "True"
+            print(answer)
+            //if else concept
+                if (a == True): only then answer will return True , otherwise (false or any other string) False will return as answer.
