@@ -7,6 +7,10 @@
 
 # FILE EXTENSION : ".py"
 
+# Input/Output : 
+To take input from user : input() // string by default
+To take any another type of data as input " we have to typecast the input() statement "
+    for int - int(input()) and so on.... 
 
 # Data types in python :
     > Python supports following data types-
