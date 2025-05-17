@@ -1,0 +1,6 @@
+print("\nTalking to Your Code: Because Yelling at the Screen Doesn’t Work (Yet)\n")
+print("This is my learning journey!!")
+user = input("Username : ")
+feedback = input("FeedBack : ",)
+print("\n",user," ~ ", feedback)
+print(" Bot ~ Thanks! for the feedback.")
