@@ -1,8 +1,8 @@
-<h1>What is Python ? </h1>
-<p> <ul type="disc">
-<li>Developed by "GUIDO VAN ROSSUM".</li>
-<li>Pyhton is simple and easy language </li>
-<li>Free and Open source</li>
-<li>High level language.</li>
-<li>Portable Langauge</li>
-<p>FILE EXTENSION : <b>.py<b> </p>
+# What is Python ? 
+    1. Developed by "GUIDO VAN ROSSUM".
+    2. Pyhton is simple and easy language 
+    3. Free and Open source.
+    4. High level language.
+    5. Portable Langauge.
+
+# FILE EXTENSION : ".py"
