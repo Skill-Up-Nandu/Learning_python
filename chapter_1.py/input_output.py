@@ -2,5 +2,7 @@ print("\nTalking to Your Code: Because Yelling at the Screen Doesn’t Work (Yet
 print("This is my learning journey!!")
 user = input("Username : ")
 feedback = input("FeedBack : ",)
+star = int(input("How many star : "))
 print("\n",user," ~ ", feedback)
-print(" Bot ~ Thanks! for the feedback.")
+print("\t",star*"* ")
+print("\n Nandu ~ Thanks! for the feedback.")

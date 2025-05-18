@@ -1,9 +1,10 @@
 # What is Python ? 
     1. Developed by "GUIDO VAN ROSSUM".
-    2. Pyhton is simple and easy language 
-    3. Free and Open source.
-    4. High level language.
-    5. Portable Langauge.
+    2. Pyhton is simple and easy language.
+    3. DYnamic language.
+    4. Free and Open source.
+    5. High level language.
+    6. Portable Langauge.
 
 # FILE EXTENSION : ".py"
 
