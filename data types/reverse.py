@@ -1,11 +1,15 @@
 # how to reverse a string
-str = input("enter an idiom : " )
+idiom = input("enter an idiom : " )
 print("Original String")
-print(str)
-str_one = str[::-1]
+print(idiom)
+
+#reverse by character
+reversed_chars = idiom[::-1]
 print("Reverse By character : ")
-print(str_one)   # whole words qith character
+print(reversed_chars)   
+
+#reverse by words
+revrsed_words = str.split()
+revrsed_words = revrsed_words[::-1]
 print("Reverse by words : ")
-str_two = str.split()
-str_two = str_two[::-1]
-print(" ".join(str_two))
+print(" ".join(revrsed_words))
