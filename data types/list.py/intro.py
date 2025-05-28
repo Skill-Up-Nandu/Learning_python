@@ -1,0 +1,2 @@
+intro = "* Ah, lists in Python — \nBecause one variable just isn’t enough.\n* Why store one value when you can hoard a whole bunch in square brackets and call it a day?\n* Whether it’s numbers, strings, or your existential crises.\n* Just throw them all into a list! Want to sort them? Slice them? Mutate them like a mad scientist?\n* Python says: Go ahead, break all the rules of tidy programming while you’re at it.\n* Lists: because chaos deserves structure too."
+print(intro)
