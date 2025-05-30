@@ -4,13 +4,13 @@
 bucket = ["mango", "kiwi", "raspberry","guava","watermelon"]
 
 # function to check whether the fruit is present or not
-def check_existense(fruit):
+def check_existence(fruit):
     if fruit in bucket:
         print(fruit,"is Present in ",bucket)
     else:
         print(fruit," is Not Present in",bucket)
 
 # function calls to check for particular fruits
-check_existense('kiwi')
-check_existense('mango')
-check_existense('apple')
+check_existence('kiwi')
+check_existence('mango')
+check_existence('apple')
