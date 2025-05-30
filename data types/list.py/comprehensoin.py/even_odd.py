@@ -7,3 +7,7 @@ print('Original List :',nums)
 # retriving even number list
 even_nums = [x for x in nums if x % 2 == 0]
 print('Even numbers : ',even_nums)
+
+# retriving odd number list
+odd_nums = [x for x in nums if x % 2 != 0]
+print('Odd numbers : ',odd_nums)
