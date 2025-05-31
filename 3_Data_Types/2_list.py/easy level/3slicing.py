@@ -6,4 +6,5 @@ count = len(nums)
 position = (count-1) // 2 # ineteger division for middle position
 
 # slicing to get the middle three elements
-print("Middle three elements are : ",nums[position-1:position+2])
+print("Middle three elements are : ",nums[position-1:position+2]) 
+# last value of slicing is exclusive
