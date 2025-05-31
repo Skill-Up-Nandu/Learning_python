@@ -50,3 +50,34 @@ Iterate over the indices in reverse order or use a list comprehension to create 
 * list.sort()  // result in ascending order
 * list.sort(reverse = True)  // result in descending order
 
+######################## NEW CONCEPTS ##########################
+
+1. COMPREHENSION 
+* List comprehensions are a consice and redable way to create a list or filter a list in python.
+* Instead of using loops and .append() method you can easily build a new list in a signle line of code.
+
+    // SYNTAX :
+    new_list = [ expression for item in iterable]
+    * expression -> what to print (any method , function , operators)
+    * item  -> item_name (manualy) in a list
+    * iterable  -> list name
+
+
+2. ENUMERATE 
+* The enumerate() function in pyhton is used to loop over iterable (list tuple) and get both the index and the value at the same time.
+ // SYNTAX :
+    enumerate(iterable , start = num)  // default start from 0
+    i.g. comprehension (medium)
+** enumerate is cleaner , more readable and pythonic.
+
+3. ENUMERATE INSIDE COMPREHENSION
+* Using this you can print both the value and index easily.
+
+
+3. HOW TO FLATTEN 2D AND 3D LIST
+* Using comprehension you can easily flatten the 2d and 3D
+  // 2D FLAT LIST 
+  -> 1D_list = [item for sublist in 2D_list for item in sublist]
+
+  // 3D FLAT LIST
+  -> 1D_list = [item for sublist in 3D_list for subsublist in sublist for item in subsublist]
