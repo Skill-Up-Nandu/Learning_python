@@ -50,6 +50,10 @@ Iterate over the indices in reverse order or use a list comprehension to create 
 * list.sort()  // result in ascending order
 * list.sort(reverse = True)  // result in descending order
 
+5. RETURN Index
+* list.index(ele) // return the particular index of the element
+        i = list.index(ele)  // store the value return
+
 ######################## NEW CONCEPTS ##########################
 
 1. COMPREHENSION 
