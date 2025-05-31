@@ -17,6 +17,8 @@ animals.pop(1)
 print('Update 3 "Pop" :',animals)
 
 # example 2 (ref method.2)
+# remove 3 from the list as all indices4
+
 numbers = [2,4,5,3,6,3,7,7,8,3,9,3]
 print('Number list :',numbers)
 
