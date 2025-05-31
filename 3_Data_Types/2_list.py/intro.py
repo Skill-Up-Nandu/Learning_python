@@ -20,12 +20,17 @@ print(intro)
 #### METHODS #####
 
 1 .  ADD ELEMENT : 
+    // AT THE END
 * list.append(ele)  
         // * [1,2,3]  -> (4) -> [1,2,3,4]
         // * [1,2,3]  -> ([3,4,5])   -> [1,2,3,[3,4,5]]
 * list.extend(ele)
         // * [1,2,3]  -> (4) -> [1,2,3,4]
         // * [1,2,3]  -> ([3,4,5])   -> [1,2,3,3,4,5]
+    
+    // AT ANY index
+* list.index(idx,ele)
+
 
 2. REMOVE ELEMENT :
 * list.remove(el) // remove first occurance of the element.
@@ -35,4 +40,13 @@ when you remove elements from a list while iterating over their indices, the lis
 
 Correct way:
 Iterate over the indices in reverse order or use a list comprehension to create a new list without the unwanted elements.   // i.g delete.py (easy)
+
+3. REVERSE LIST 
+* list.reverse()
+* revered.(list)
+    // specialy used in removing elements by indices .
+
+4. SORTING
+* list.sort()  // result in ascending order
+* list.sort(reverse = True)  // result in descending order
 
