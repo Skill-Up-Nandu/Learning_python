@@ -3,5 +3,5 @@
 
 t = (10,20,30,40,50,60)
 print("Original Tupl : ",t)
-idx = len(t) // 2
-print("Sliced Tuple : ",t[idx-1 :idx+2])
+mid = len(t) // 2
+print("Sliced Tuple : ",t[mid-1 :mid+2])
