@@ -1,4 +1,5 @@
 # MASTER TUPLE UNPACKING CHALLENGE
+
 # A list of student records, each as a tuple:
 # Format: (name, (math_score, science_score, english_score), age, *hobbies)
 # output : "Alice (20 yrs) scored an average of 84.33 and enjoys painting, reading"
