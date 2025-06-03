@@ -4,8 +4,8 @@
 tasks =[]
 def show_menu():
     print("\n============= TASK MANAGER ================")
-    print("1. Add Task")
-    print("2. View All Task")
+    print("1. View All Task")
+    print("2. Add Task")
     print("3. Mark Task As Done")
     print("4. Delete Task")
     print("5. Exit")
@@ -13,43 +13,52 @@ def show_menu():
 def add_task():
     if not tasks:
         print("Task list is empty . Adding your first task. ")
-    task = input("\nEnter a new task : ")
-    tasks.append(task)
+    title = input("\nEnter a new task : ")
+    tasks.append({"title" : title ,"done" : False})
     print("\nTask added successfully!")
-    show_menu()
-    choose_option()
 
 def view_all_task():
-    print("=============LIST OF TASKS=============")
-    for idx , task in enumerate(tasks , start =1):
-        print(f"{idx}. {task}")
-    show_menu()
-    choose_option()
+    print("\n============= LIST OF TASKS ================\n")
+    if not tasks:
+        print("LIST IS EMPTY NOW")
+    for idx , task in enumerate(tasks):
+        status = "✅" if task["done"] else "❌"
+        print(f"{idx+1}. {task['title']} [{status}] ")
 
 def mark_done():
-    print(3)
+    view_all_task()
+    index = int(input("\nEnter The Task Number To Mark As Done : "))
+    tasks[index-1]["done"] = True
+    print(f"\nMarked '{tasks[index-1]["title"]}' As Done !!")
+
+
 def delete_task():
-    print(4)
-def exit_menu():
-    print(5)
+    view_all_task()
+    delete = int(input("\nEnter the Task Number To Remove : "))
+    if 1 <= delete <= len(tasks):
+        removed_task =tasks.pop(delete-1)
+        print(f"\nTask '{removed_task["title"]}' Removed Successfully !")
+    else:
+        print("\nInvalid Taks Number ")
 
 
-def choose_option():
+while True:
+    show_menu()
     option = int(input("\nChoose an option (1-5) : "))
     if option == 1:
-        add_task()
-    elif option == 2:
         view_all_task()
-#   elif option == 3:
-#       mark_done()
-#   elif option == 4:
-#       delete_task()
-#   elif option == 5:
-#       exit_menu()
+    elif option == 2:
+        add_task()  
+    elif option == 3:
+        mark_done()
+    elif option == 4:
+        delete_task()
+    elif option == 5:
+        print("\n THANKS TO VISIT !")
+        break
     else:
-        print("Choice is not valid . \n TRY AGAIN!!")
+        print("\nChoice is not valid .TRY AGAIN!!")
 
-show_menu()
-choose_option()
+
 
 
