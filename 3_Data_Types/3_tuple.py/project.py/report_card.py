@@ -26,4 +26,4 @@ for name, score, enroll , *hobbies in students:
         topper_name = name
 
 print("\n--------------------------------------------\n")
-print(f"✅ Class Topper : {topper_name} (Average {max_avg})\n")
+print(f"✅ Class Topper : {topper_name} (Average {max_avg:.2f})\n")
