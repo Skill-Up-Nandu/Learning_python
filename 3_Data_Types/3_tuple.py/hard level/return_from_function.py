@@ -16,7 +16,7 @@ result = create_tuple(val_1, val_2)
 print(f"My Tuple : {result}")
 
 # unpack tuple for more understnding
-sum, mul = result
+sum, prod = result
 
 print(f"\nSum of {val_1} and {val_2} : {sum}")
-print(f"Product of {val_1} and {val_2} : {mul}")
+print(f"Product of {val_1} and {val_2} : {prod}")
