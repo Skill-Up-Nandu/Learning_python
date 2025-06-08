@@ -4,5 +4,6 @@ students = {
     'isha' : 89, 'khushi' : 78, 'sunaina' : 96
 }
 
+# call the ductionaries item
 for stu, marks  in students.items():
     print(f"{stu} scored {marks}")
