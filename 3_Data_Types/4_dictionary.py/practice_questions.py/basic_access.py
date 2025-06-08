@@ -7,3 +7,14 @@ students = {
 # call the ductionaries item
 for stu, marks  in students.items():
     print(f"{stu} scored {marks}")
+
+# Add a new student to the dictionary. Update the marks of an existing student.
+
+students.update({'sameer' : 78})
+students.update({'khushi' : 12})
+students['akki'] = 45
+students['sunaina'] = 75
+print(students)
+
+# Ask the user for a student name. Print their marks using `.get()` (return “Not found” if missing).
+
