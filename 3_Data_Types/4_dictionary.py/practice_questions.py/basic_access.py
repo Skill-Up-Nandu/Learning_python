@@ -18,10 +18,17 @@ print(students)
 
 # Ask the user for a student name. Print their marks using `.get()` (return “Not found” if missing).
 
-name = input("Enter Your Name : ")
-marks = students.get(name)
-if marks is not None:
-    print(f"{name.title()} scored {marks} marks.")
-else:
-    print(f"No record found of {name.title()}.")
+# name = input("Enter Your Name : ")
+# marks = students.get(name)
+# if marks is not None:
+#     print(f"{name.title()} scored {marks} marks.")
+# else:
+#     print(f"No record found of {name.title()}.")
 
+# Given a string, count how many times each character appears using a dictionary.
+
+text = input("Enter any string : ")
+freq = {}
+for char in text :
+    freq[char] = freq.get(char, 0)+1
+print(freq)
