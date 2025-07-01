@@ -20,7 +20,9 @@
 
 # Logical Operators
 
-    ** User has to answer in "yes" or "no" but logically i want to store it in "true" or "false". **
+**Logical operators in Python are used to perform logical operations on conditional statements. They are mainly used in control flow statements like if, while, and in filtering data.**
+
+**User has to answer in "yes" or "no" but logically i want to store it in "true" or "false".**
 code ~
     user_input = input("Do you agree? (yes/no): ").strip().lower()
     is_agreed = True if user_input == "yes" else False
@@ -31,6 +33,9 @@ code ~
     3. not
 
 # Assignment Operators
+
+**Assignment operators in Python are used to assign values to variables. Python supports a variety of assignment operators that help modify and assign values efficiently.**  
+
     1. =  # assignment
     2. += # add and assign
     3. -= # subtract and assign
@@ -41,13 +46,22 @@ code ~
     8. **= # power and assign
 
 # Identity Operators
+
+**Identity operators in Python are used to compare the memory location of two objects. They check whether two variables point to the same object in memory (not just if their values are equal).**
+
     1. is
     2. is not
 
 # Membership Operators
+
+**Membership operators in Python are used to test whether a value or variable is present in a sequence (like string, list, tuple, set, or dictionary).**
+
     1. in
     2. not in   
 # Bitwise Operators
+
+**Bitwise operators perform operations on the binary representations of integers. They operate bit by bit, which means they treat numbers as a sequence of bits (0s and 1s) rather than decimal or other representations.**
+
     **Prefix - 
         *0b - binary
         *0x - hexadecimal
