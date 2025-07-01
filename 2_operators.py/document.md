@@ -19,6 +19,13 @@
     # you must try clever if statements to understand the comparison operators better
 
 # Logical Operators
+
+    ** User has to answer in "yes" or "no" but logically i want to store it in "true" or "false". **
+code ~
+    user_input = input("Do you agree? (yes/no): ").strip().lower()
+    is_agreed = True if user_input == "yes" else False
+    print("Boolean value:", is_agreed)
+
     1. and
     2. or
     3. not
