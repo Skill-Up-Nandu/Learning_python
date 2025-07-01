@@ -41,6 +41,11 @@
     1. in
     2. not in   
 # Bitwise Operators
+    **Prefix - 
+        *0b - binary
+        *0x - hexadecimal
+        *0o - octal
+
     1. &  # bitwise AND
     2. |  # bitwise OR
     3. ^  # bitwise XOR
