@@ -13,6 +13,9 @@ To take input from user : input() // string by default
 To take any another type of data as input " we have to typecast the input() statement "
     for int - int(input()) and so on.... 
 
+# string method
+Whenever we asked for an userinput in the form of string we should add some method such as ".strip()" -> to remove extra space and ".lower()/.upper()/.title()" to change the text into required case. 
+
 # Data types in python :
     > Python supports following data types-
         1.Test
