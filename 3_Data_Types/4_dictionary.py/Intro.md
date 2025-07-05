@@ -48,3 +48,11 @@
 - **Zip Function**
     - Zip is a built-in function that combines twi or more iterables (like list or tuples) element-wise into pairs.
     **medium 5th practical** dictionary
+
+- **Lambda Function**
+    - A Lambda Function in python is a small, anonymous function used to perform short operations.
+    - AKA - "One-Liner_function"
+    - WHY ?
+        # For short and temporary functions.
+        # Often use with : sorted() , map() , filter() etc
+        # syntax : lambda argument : expression

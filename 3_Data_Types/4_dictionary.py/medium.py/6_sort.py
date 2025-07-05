@@ -13,8 +13,9 @@ def sort_alph():
     sorted_marks = dict(sorted(marks.items()))       
     print(sorted_marks) 
 
-# def sort_nums():
-#     sprted_marks = dict(sorted())
+def sort_nums():
+    sorted_marks = sorted(marks.items() , key = lambda item : item[1])
+    print(dict(sorted_marks))
 
 sort_alph()
-# sort_nums()
+sort_nums()
