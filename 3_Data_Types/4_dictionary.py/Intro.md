@@ -56,3 +56,9 @@
         # For short and temporary functions.
         # Often use with : sorted() , map() , filter() etc
         # syntax : lambda argument : expression
+    
+- **setdefault() method**
+    - The setdefault() methid in python dictionaries is used to get the value of a key if it exists , or set it to a default value if it does not exist.
+    - syntax :
+        # dict.setdefault(key , default)
+    - It is very useful for grouping or collecting items in a dictionary, as in hard_1_group code for grouping names by department
