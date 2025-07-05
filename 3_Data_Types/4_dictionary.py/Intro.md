@@ -44,3 +44,7 @@
     - sentence = "I love my contry India.India is my native contry"
     - print(sentence.split())
     - output : ["I", "love", "my", "contry", "India", "and", "India", "is", "my", "native", "contry"]
+
+- **Zip Function**
+    - Zip is a built-in function that combines twi or more iterables (like list or tuples) element-wise into pairs.
+    **medium 5th practical** dictionary
