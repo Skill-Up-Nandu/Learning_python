@@ -14,3 +14,26 @@ def check_max():
 check_maximum()
 check_max()
 
+
+# Step-by-step:
+# scores is a dictionary:
+
+# max() function:
+
+# The max() function returns the largest item in an iterable.
+# Here, the iterable is the dictionary scores, so it iterates over the keys: 'A', 'B', 'C'.
+# key=scores.get:
+
+# The key argument tells max() how to compare items.
+# scores.get is a function that, given a key, returns its value from the dictionary.
+# So, for each key, max() uses scores.get(key) to get the value.
+# How it works:
+
+# For 'A', scores.get('A') → 78
+# For 'B', scores.get('B') → 82
+# For 'C', scores.get('C') → 91
+# max() compares these values and finds the key with the highest value.
+# Result:
+
+# max_key will be 'C' because scores['C'] is 91, the highest value.
+
