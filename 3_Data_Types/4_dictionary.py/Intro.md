@@ -39,3 +39,8 @@
 
     - new_dic = { key_exp : value for key , value in iterable }
     - result_lower = { k.lower() = v for k , v in result.items() }
+
+- **Sentence into list itmes**
+    - sentence = "I love my contry India.India is my native contry"
+    - print(sentence.split())
+    - output : ["I", "love", "my", "contry", "India", "and", "India", "is", "my", "native", "contry"]
