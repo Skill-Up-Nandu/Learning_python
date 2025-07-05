@@ -12,4 +12,6 @@ def group_by_key():
         name = item['name']
         result.setdefault(dept , []).append(name)
     print(f"Grouped Data : {result}")
+
+    
 group_by_key()
