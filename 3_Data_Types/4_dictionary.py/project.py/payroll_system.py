@@ -39,18 +39,38 @@ def add_emp() :
             'dept' : dept ,
             'daily_wages' : daily_wages ,
         }
-    return emp_id
+    return emp_id , daily_wages
     
 def update_bonus_deduct() :
     print(f"\n------------- BONUS / DEDUCTION -------------\n")
-    bonus = input(f"Enter Bonus (if any) : ")
-    deduction = input(f"Enter Deduction (if any) :")
+    bonus = float(input(f"Enter Bonus (if any) : "))
+    deduction = float(input(f"Enter Deduction (if any) :"))
     return bonus , deduction
+
+def gen_sal() : 
+    print(f"\n------------- SALARY CALCULATION -------------\n")
+    
+    print(f"Total Presents : {float(attendance.count('p'))} Days")
+    print(f"Total Absents : {float(attendance.count('a'))} Days")
+    print(f"(Working_days\t*\tDaily_wages)")
+    print(f"{float(attendance.count('p'))}\t\t*\t{daily_wages}")
+
+    print(f"------------------------------------------------")
+    gross_sal = float(attendance.count('p'))*daily_wages
+    print(f"Gross Salary :\t{gross_sal}")
+    print(f"Bonus :\t\t  {bonus}")
+    print(f"Deductions :\t -({deduction})")
+
+    print(f"------------------------------------------------")
+    net_sal = (gross_sal + bonus)-deduction
+    print(f"Net Salary : \t {net_sal}\n")
+    return net_sal
+
     
 while True :
     option = show_menu()    
     if option == 1 :
-        emp_id = add_emp()
+        emp_id , daily_wages = add_emp()
     elif option == 2 :
         attendance = mark_attendance()
         emp_data[emp_id]['attendance'] = attendance
@@ -58,6 +78,9 @@ while True :
         bonus, deduction = update_bonus_deduct()
         emp_data[emp_id]['bonus'] = bonus
         emp_data[emp_id]['deduction'] = deduction
+    elif option == 4 :
+        salary = gen_sal()
+        emp_data[emp_id]['salary'] = salary
         print(emp_data)
 
 
