@@ -14,6 +14,11 @@ def show_menu() :
     option = int(input((f"\nChoose an option (1-7) : \n")))
     return option
 
+def get_attendance() :
+    user_attendance = (input("Attendance (P- 1 / A- 0) ")).lower()
+    attendance = [x for x in user_attendance.strip().split()]
+    return attendance
+
 def add_emp() :
     print(f"\n------------- Add Employee Details -------------")
 
@@ -21,16 +26,16 @@ def add_emp() :
     name = input("Employee Name : ")
     dept = input("Department Name : ")
     daily_wages = float(input("Daily Wages : "))
-    attendace = list(input("Attendance (P- 1 / A- 0) "))
+    attendance = get_attendance()
     bonus = float(input("Bonus if any : "))
     deduct = float(input("Deduction if any : "))
-    salary = ( (attendace.count(1) * daily_wages) + bonus ) - deduct 
+    salary = ( (attendance.count('p') * daily_wages) + bonus ) - deduct 
     
     emp_data[emp_id] = {
             'name' : name ,
             'dept' : dept ,
             'daily_wages' : daily_wages ,
-            'attendance' : attendace ,
+            'attendance' : attendance ,
             'bonus' : bonus ,
             'deduct' : deduct ,
             'salary' : salary 
@@ -40,6 +45,7 @@ while True :
     option = show_menu()    
     if option == 1 :
         add_emp()
+        print(emp_data)
 
 
 
