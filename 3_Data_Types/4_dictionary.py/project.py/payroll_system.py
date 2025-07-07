@@ -41,6 +41,11 @@ def add_emp() :
         }
     return emp_id
     
+def update_bonus_deduct() :
+    print(f"\n------------- BONUS / DEDUCTION -------------\n")
+    bonus = input(f"Enter Bonus (if any) : ")
+    deduction = input(f"Enter Deduction (if any) :")
+    return bonus , deduction
     
 while True :
     option = show_menu()    
@@ -49,6 +54,11 @@ while True :
     elif option == 2 :
         attendance = mark_attendance()
         emp_data[emp_id]['attendance'] = attendance
+    elif option == 3 :
+        bonus, deduction = update_bonus_deduct()
+        emp_data[emp_id]['bonus'] = bonus
+        emp_data[emp_id]['deduction'] = deduction
+        print(emp_data)
 
 
 
