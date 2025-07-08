@@ -65,6 +65,7 @@ def mark_attendance() :
             print(f"\n{emp_id}'s Attendance Marked Successfully !")
 
             return attendance
+        
         except ValueError as vs:
             print(f"\nError : {vs}")
 
@@ -75,17 +76,23 @@ def update_bonus_deduct() :
 
     if not emp_data :
         print(f"\nNO RECORD Yet. ADD Employee's Details first.")
-    
-    else :   
-        bonus = float(input(f"Enter Bonus (if any) : "))
-        deduction = float(input(f"Enter Deduction (if any) :"))
+        return
+    while True :
+        try :
+            bonus = float(input(f"Enter Bonus (if any) : "))
+            deduction = float(input(f"Enter Deduction (if any) :"))
+            
+            print(f"Updation has done. Generate Salary !")
 
-        print(f"Updation has done. Generate Salary !")
+            emp_data[emp_id]['bonus'] = bonus
+            emp_data[emp_id]['deduction'] = deduction
 
-        emp_data[emp_id]['bonus'] = bonus
-        emp_data[emp_id]['deduction'] = deduction
+            return bonus , deduction
+        
+        except ValueError as ve :
+            print(f"Error : {ve}")
 
-        return bonus , deduction
+        
 
 
 
@@ -148,13 +155,14 @@ def delete_emp() :
 
 
 while True :
-    option = show_menu() 
     try :    
+        option = show_menu() 
         if option == 1 :
             emp_id , daily_wages , department = add_emp()
 
         elif option == 2 :
             attendance = mark_attendance()
+            print(attendance)
         
         elif option == 3 :
             bonus , deduction = update_bonus_deduct()
@@ -172,10 +180,9 @@ while True :
             print(f"\nThanks For Visiting ")
             break
         else :
-            print(f"\nChoose Option between 1 - 7 only")
-        
+            print(f"\nChoose Option between 1 - 7 only")  
     except ValueError :
-        print(f"Invalid Input. Try Again")
+        print(f"\nInvalid Input. Try Again")
 
     
 
