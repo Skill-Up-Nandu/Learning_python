@@ -3,6 +3,7 @@
 print(f"\n------- EMPLOYEE ATTENDANCE AND PAYROLL SYSTEM -------\n")
 
 emp_data = {}
+attendance = []
 def show_menu() : 
     print(f"\n------------------- Choose an Option -----------------\n")
     print(f" 1. Add Employee.")
@@ -24,8 +25,10 @@ def add_emp() :
     emp_id = input("Employee Id : ")
     name = input("Employee Name : ")
     department = input("Department Name : ")
-    daily_wages = float(input("Daily Wages : "))
-    
+    try :
+        daily_wages = float(input("Daily Wages : "))
+    except ValueError :    
+        print(f"Invalid Wages !")
     emp_data[emp_id] = {
             'name' : name ,
             'department' : department ,
@@ -69,13 +72,15 @@ def update_bonus_deduct() :
         emp_data[emp_id]['bonus'] = bonus
         emp_data[emp_id]['deduction'] = deduction
 
+        return bonus , deduction
+
 
 
 def gen_sal() : 
     print(f"\n------------- SALARY CALCULATION -------------\n")
     if not emp_data :
         print(f"\nNO RECORD Yet. ADD Employee's Details first.")
-    elif "attendance" not in emp_data.keys() : 
+    elif not attendance : 
         print(f"You have to add Attendance First .")
     else : 
         print(f"Total Presents : {float(attendance.count('p'))} Days")
@@ -84,19 +89,19 @@ def gen_sal() :
         print(f"{float(attendance.count('p'))}\t\t*\t{daily_wages}/-")
 
         print(f"---------------------------------------------")
-        gross_sal = float(attendance.count('p'))*daily_wages
+        gross_sal = float(attendance.count('p')*daily_wages)
         print(f"Gross Salary :\t{gross_sal}/-")
-        print(f"Bonus :\t\t  {emp_data.get('bonus')}/-")
-        print(f"Deductions :\t -({emp_data.get('deduction')})")
+        print(f"Bonus :\t\t  {bonus}/-")
+        print(f"Deductions :\t -({deduction})")
 
         print(f"---------------------------------------------")
-        net_sal = (gross_sal + emp_data.get('bonus'))-emp_data.get('deduction')
-        print(f"Net Salary : \t {net_sal}/-\n")
+        net_salary = (gross_sal + bonus)-deduction
+        print(f"Net Salary : \t {net_salary}/-\n")
 
         emp_data[emp_id]['salary'] = net_salary
 
-        print(f"/nSalary Generated Successfully !")
-        return net_sal 
+        print(f"\nSalary Generated Successfully !")
+        return net_salary 
 
 def view_summary() :
     print(f"\n------------------Employee Summary --------------")
@@ -105,13 +110,13 @@ def view_summary() :
     
     for idx , (emp_id , details) in enumerate(emp_data.items(), 1):
         print(f"\nSr No . {idx}\n")
-        print(f"* Employee : {details.get('name', 'N/A')} ({emp_id})")
-        print(f"* Department : {details.get('department', 'N/A')}")
-        print(f"* Days Worked : {details.get(attendance).count('p'), 'N/A'}")
-        print(f"* Daily Wages : {details.get('daily_wages', 'N/A')}")
-        print(f"* Bonus : ₹{details.get('bonus', 'N/A')}")
-        print(f"* Deduction : ₹{details.get('deduction', 'N/A')}")
-        print(f"* Monthly Salary : ₹{details.get('salary', 'N/A')}")
+        print(f"* Employee : {details.get('name', '-')} ({emp_id})")
+        print(f"* Department : {details.get('department', '-')}")
+        print(f"* Days Worked : {details.get('attendance', '-').count('p')}")
+        print(f"* Daily Wages : {details.get('daily_wages', '-')}/-")
+        print(f"* Bonus : {details.get('bonus', '-')}/-")
+        print(f"* Deduction : {details.get('deduction', '-')}/-")
+        print(f"* Monthly Salary : {details.get('salary', '-')}/-")
     
 def delete_emp() :
     print(f"\n------------- LIST OF EMPLOYEES -------------\n")
@@ -136,10 +141,10 @@ while True :
         emp_id , daily_wages , department = add_emp()
 
     elif option == 2 :
-        mark_attendance()
+        attendance = mark_attendance()
         
     elif option == 3 :
-        update_bonus_deduct()
+        bonus , deduction = update_bonus_deduct()
         
     elif option == 4 :
         net_salary  = gen_sal()
