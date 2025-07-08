@@ -22,9 +22,9 @@ def add_emp() :
 
     if not emp_data :
         print(f"\nAdd your first employee's details : \n")
-    emp_id = input("Employee Id : ")
-    name = input("Employee Name : ")
-    department = input("Department Name : ")
+    emp_id = input("Employee Id : ").upper()
+    name = input("Employee Name : ").title()
+    department = input("Department Name : ").title()
     try :
         daily_wages = float(input("Daily Wages : "))
     except ValueError :    
@@ -43,19 +43,32 @@ def mark_attendance() :
 
     if not emp_data :
         print(f"\nNO RECORD Yet. ADD Employee's Details first.")
+        return
+    while True : 
+        try :
+            print(f"Present : 'P'\t\tAbsent : 'A'\n")
+            print(f"Mon\tTue\tWed\tThu\tFri")
+            print(f"------------------------------------------")
 
-    else : 
-        print(f"Present : 'P'\t\tAbsent : 'A'\n")
-        print(f"Mon\tTue\tWed\tThu\tFri")
-        print(f"------------------------------------------")
+            weekly_attend = input().lower()
+            weekly_attend = weekly_attend.replace('\t', '')
 
-        user_attendance = input().lower()
-        attendance = [x for x in user_attendance.strip().split()]
-        emp_data[emp_id]['attendance'] = attendance
+            if len(weekly_attend) != 5 :
+                raise ValueError("Please Enter Exactly 5 Days of Attendance")
+            
+            for day in weekly_attend :
+                if day not in ('p' , 'a'):
+                    raise ValueError(f"\nInvalid Input only 'P' and 'A' are exceptable.")
+                
+            attendance = [x for x in weekly_attend.strip().split()]
+            emp_data[emp_id]['attendance'] = attendance
+            print(f"\n{emp_id}'s Attendance Marked Successfully !")
 
-        print(f"\nAttendance Marked Successfully. Add Bonus !")
+            return attendance
+        except ValueError as vs:
+            print(f"\nError : {vs}")
 
-        return attendance
+            
     
 def update_bonus_deduct() :
     print(f"\n------------- BONUS / DEDUCTION -------------\n")
@@ -136,24 +149,26 @@ def delete_emp() :
 
 
 while True :
-    option = show_menu()    
-    if option == 1 :
-        emp_id , daily_wages , department = add_emp()
+    option = show_menu() 
+    try :    
+        if option == 1 :
+            emp_id , daily_wages , department = add_emp()
 
-    elif option == 2 :
-        attendance = mark_attendance()
+        elif option == 2 :
+            attendance = mark_attendance()
         
-    elif option == 3 :
-        bonus , deduction = update_bonus_deduct()
+        elif option == 3 :
+            bonus , deduction = update_bonus_deduct()
         
-    elif option == 4 :
-        net_salary  = gen_sal()
+        elif option == 4 :
+            net_salary  = gen_sal()
         
-    elif option == 5 :
-        view_summary()
+        elif option == 5 :
+            view_summary()
 
-    elif option == 6 :
-        delete_emp()
+        elif option == 6 :
+            delete_emp()
+        
     
 
 
