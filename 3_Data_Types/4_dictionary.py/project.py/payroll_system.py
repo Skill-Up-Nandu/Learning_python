@@ -145,7 +145,6 @@ def delete_emp() :
             print(f"{removed.get('name')} Removed Successfully ! ")
         else :
             print(f"Incorrect Employee - Id")
-    
 
 
 while True :
@@ -169,6 +168,15 @@ while True :
         elif option == 6 :
             delete_emp()
         
+        elif option == 7 :
+            print(f"\nThanks For Visiting ")
+            break
+        else :
+            print(f"\nChoose Option between 1 - 7 only")
+        
+    except ValueError :
+        print(f"Invalid Input. Try Again")
+
     
 
 
