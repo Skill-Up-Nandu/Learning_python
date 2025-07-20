@@ -44,14 +44,15 @@ def mark_attendance() :
     if not emp_data :
         print(f"\nNO RECORD Yet. ADD Employee's Details first.")
         return
+
+    week_days = ['mon', 'tue', 'wed', 'thur', 'fri']
     while True : 
         try :
             print(f"Present : 'P'\t\tAbsent : 'A'\n")
             print(f"Mon\tTue\tWed\tThu\tFri")
             print(f"------------------------------------------")
 
-            weekly_attend = input().lower()
-            weekly_attend = weekly_attend.replace('\t', '')
+            weekly_attend = input().lower().replace('\t', '')
 
             if len(weekly_attend) != 5 :
                 raise ValueError("Please Enter Exactly 5 Days of Attendance")
@@ -60,11 +61,13 @@ def mark_attendance() :
                 if day not in ('p' , 'a'):
                     raise ValueError(f"\nInvalid Input only 'P' and 'A' are exceptable.")
                 
-            attendance = [x for x in weekly_attend.strip().split()]
+            
+            # Create dictionary like {'Mon': 'p', 'Tue': 'a', ...}
+
+            attendance = {day : status for day , status in zip(week_days , weekly_attend)}
             emp_data[emp_id]['attendance'] = attendance
             print(f"\n{emp_id}'s Attendance Marked Successfully !")
-
-            return attendance
+            break
         
         except ValueError as vs:
             print(f"\nError : {vs}")
@@ -98,30 +101,34 @@ def update_bonus_deduct() :
 
 def gen_sal() : 
     print(f"\n------------- SALARY CALCULATION -------------\n")
+
     if not emp_data :
         print(f"\nNO RECORD Yet. ADD Employee's Details first.")
-    elif not attendance : 
-        print(f"You have to add Attendance First .")
-    else : 
-        print(f"Total Presents : {float(attendance.count('p'))} Days")
-        print(f"Total Absents : {float(attendance.count('a'))} Days")
-        print(f"(Working_days\t*\tDaily_wages)")
-        print(f"{float(attendance.count('p'))}\t\t*\t{daily_wages}/-")
+        return
+    
+    for emp_id, details in emp_data.items():
+        if 'attendance' not in details:
+            print(f"\n❌ Attendance not marked for {emp_id} - {details['name']}")
+            continue
 
-        print(f"---------------------------------------------")
-        gross_sal = float(attendance.count('p')*daily_wages)
-        print(f"Gross Salary :\t{gross_sal}/-")
-        print(f"Bonus :\t\t  {bonus}/-")
-        print(f"Deductions :\t -({deduction})")
+        attendance = details['attendance']
+        present_days = list(attendance.values()).count('p')
+        daily_wage = details.get('daily_wages', 0)
+        bonus = details.get('bonus', 0)
+        deduction = details.get('deduction', 0)
 
-        print(f"---------------------------------------------")
-        net_salary = (gross_sal + bonus)-deduction
-        print(f"Net Salary : \t {net_salary}/-\n")
+        gross_salary = present_days * daily_wage
+        net_salary = gross_salary + bonus - deduction
 
-        emp_data[emp_id]['salary'] = net_salary
+        details['salary'] = net_salary
 
-        print(f"\nSalary Generated Successfully !")
-        return net_salary 
+        print(f"\n✅ {details['name']} ({emp_id})")
+        print(f"Presents: {present_days} days")
+        print(f"Gross Salary: {gross_salary}/-")
+        print(f"Bonus: {bonus}/-")
+        print(f"Deduction: -{deduction}/-")
+        print(f"Net Salary: {net_salary}/-")
+
 
 def view_summary() :
     print(f"\n------------------Employee Summary --------------")
@@ -132,7 +139,7 @@ def view_summary() :
         print(f"\nSr No . {idx}\n")
         print(f"* Employee : {details.get('name', '-')} ({emp_id})")
         print(f"* Department : {details.get('department', '-')}")
-        print(f"* Days Worked : {details.get('attendance', '-').count('p')}")
+        print(f"* Days Worked : {list(details.get('attendance', {}).values()).count('p')}")
         print(f"* Daily Wages : {details.get('daily_wages', '-')}/-")
         print(f"* Bonus : {details.get('bonus', '-')}/-")
         print(f"* Deduction : {details.get('deduction', '-')}/-")
