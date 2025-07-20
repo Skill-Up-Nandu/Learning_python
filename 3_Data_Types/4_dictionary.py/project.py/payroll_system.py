@@ -80,23 +80,31 @@ def update_bonus_deduct() :
     if not emp_data :
         print(f"\nNO RECORD Yet. ADD Employee's Details first.")
         return
+    
+    print(f"Available Employees : ")
+    for idx , (imp_id , details) in enumerate(emp_data.items() , 1):
+        print(f"{idx}. {emp_id} ({details['name']})")
+
+    emp_id_input = input("\nEnter Employee ID to u[date bonus/deduction] : ").strip().lower()
+
+    if emp_id_input not in emp_data : 
+        print(f"\nEmployee ID '{emp_id_input}' not found.")
+
+
     while True :
         try :
-            bonus = float(input(f"Enter Bonus (if any) : "))
-            deduction = float(input(f"Enter Deduction (if any) :"))
-            
-            print(f"Updation has done. Generate Salary !")
+            bonus = float(input(f"Enter Bonus (if any) for {emp_id_input} : ") or 0 ) 
+            deduction = float(input(f"Enter Deduction (if any) for {emp_id_input} : ") or 0 )
 
-            emp_data[emp_id]['bonus'] = bonus
-            emp_data[emp_id]['deduction'] = deduction
+            emp_data[emp_id_input]['bonus'] = bonus
+            emp_data[emp_id_input]['deduction'] = deduction
+
+            print(f"Bonus / Deduction Updated for {emp_id_input} ({emp_data[emp_id_input]['name']})")
 
             return bonus , deduction
         
         except ValueError as ve :
             print(f"Error : {ve}")
-
-        
-
 
 
 def gen_sal() : 
@@ -108,7 +116,7 @@ def gen_sal() :
     
     for emp_id, details in emp_data.items():
         if 'attendance' not in details:
-            print(f"\n❌ Attendance not marked for {emp_id} - {details['name']}")
+            print(f"\nAttendance not marked for {emp_id} - {details['name']}")
             continue
 
         attendance = details['attendance']
@@ -122,7 +130,7 @@ def gen_sal() :
 
         details['salary'] = net_salary
 
-        print(f"\n✅ {details['name']} ({emp_id})")
+        print(f"\n{details['name']} ({emp_id})")
         print(f"Presents: {present_days} days")
         print(f"Gross Salary: {gross_salary}/-")
         print(f"Bonus: {bonus}/-")
