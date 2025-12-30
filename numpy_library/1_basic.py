@@ -18,3 +18,8 @@ print("THREE DIMENSIONAL ARRAY : ")
 print(three)
 print(f"Dimensions : {three.ndim}")
 
+
+# one = np.array([1,2,3,4])
+# two = np.array([[1,2,3],[4,5,6]])
+# three = np.array([[[1,2,3],[4,5,6]],[[7,8,9],[8,5,2]]])
+
