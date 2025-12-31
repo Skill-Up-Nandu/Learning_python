@@ -1,6 +1,6 @@
 # Types of stack :
 # Vertical stack : vstack : row_wise
-# Horzontal Stack :hstack : column_wise
+# Horzontal Stack :hstack : single row
 # column Stack : column_stack
 
 # vstack only perform on vertex noton matrix
