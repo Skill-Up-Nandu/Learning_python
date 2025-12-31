@@ -26,7 +26,7 @@ for i in row_sum :
         print("Invalid Sudoku")
         break
 else :
-        print("Valif for rows")
+        print("Valid for rows")
 
 for i in col_sum :
     if i != 45 :
