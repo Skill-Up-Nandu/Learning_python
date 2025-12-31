@@ -19,3 +19,5 @@ percentage = marks / 1000 * 100
 print(f"Percentage of all students")
 for idx , per in enumerate(percentage,1) :
     print(f"{idx}. {per.round(2)}%")
+
+#we can also bradcast matrx in similar way 
