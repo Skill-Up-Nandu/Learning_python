@@ -14,3 +14,9 @@ print(mul)
 
 dot = np.dot(arr1,arr2)
 print(f"\n{dot}")
+
+
+# transpose create new array with interchanging row into column and column into row
+
+transpose_arr1 = arr1.T
+print(transpose_arr1)
