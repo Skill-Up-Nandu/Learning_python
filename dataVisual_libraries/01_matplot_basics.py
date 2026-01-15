@@ -7,7 +7,7 @@ y_axis = x_axis ** 2
 
 # Creating plots
 plt.figure(figsize=(4,2))
-plt.plot(x_axis,y_axis)
+plt.plot(x_axis,y_axis,marker=0)
 plt.xlabel("X axis")
 plt.ylabel("Y axis")
 plt.title("Square Function")
