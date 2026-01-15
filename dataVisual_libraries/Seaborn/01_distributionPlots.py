@@ -22,3 +22,19 @@ sns.histplot(df['total_bill'],kde=True)
 
 plt.tight_layout()
 plt.show()
+
+
+
+# JOINTPLOTS : to compare two histplots
+sns.jointplot(x='tip',y='total_bill',data=df,kind='scatter' )
+plt.show()
+
+
+# POAIPLOT : for analyzing entire data
+sns.pairplot(df,hue='sex')
+plt.show()
+
+
+# RUGPLOT : rugplot 
+sns.rugplot(df['tip'])
+plt.show()
