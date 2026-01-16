@@ -34,9 +34,18 @@ df = pd.read_csv('IPL.csv')
 
 
 # How do teams win? (Runs vs Wickets)
-sns.countplot(x = df['won_by'],hue=df['won_by'],legend=False)
-plt.title('Teams Win BY')
-plt.ylabel('Matches')
+# sns.countplot(x = df['won_by'],hue=df['won_by'],legend=False)
+# plt.title('Teams Win BY')
+# plt.ylabel('Matches')
+# plt.show()
+
+
+
+# Most "Player of the Match" Awards
+mof_counts = df['player_of_the_match'].value_counts().head(10)
+sns.barplot(y=mof_counts.index , x=mof_counts.values ,palette='pastel')
+plt.title('Top Ten Man OF The Match Winners')
+plt.tight_layout()
 plt.show()
 
 
