@@ -19,7 +19,16 @@ df = pd.read_csv('IPL.csv')
 
 
 # Toss Decision Trends
-colors = ['green','red']
-sns.countplot(x = df['toss_decision'],palette=colors)
-plt.title('Toss Decison Trends')
-plt.show()
+# colors = ['green','red']
+# sns.countplot(x = df['toss_decision'],palette=colors)
+# plt.title('Toss Decison Trends')
+# plt.show()
+
+
+
+# Toss Winner vs Match Winner
+tossCount = df[df['toss_winner'] == df['match_winner']]
+percentage = tossCount.shape[0]/df.shape[0]*100
+print(round(percentage,2))
+
+
