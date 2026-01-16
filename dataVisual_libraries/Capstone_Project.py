@@ -51,10 +51,22 @@ df = pd.read_csv('IPL.csv')
 
 
 # 2 Top Scorers
-top_scorer = df.groupby('top_scorer')['highscore'].sum().sort_values(ascending=False).head(2)
-print(top_scorer)
-top_scorer.plot(kind='barh')
-plt.title('Top Two Scorer')
+# top_scorer = df.groupby('top_scorer')['highscore'].sum().sort_values(ascending=False).head(2)
+# print(top_scorer)
+# top_scorer.plot(kind='barh')
+# plt.title('Top Two Scorer')
+# plt.tight_layout()
+# plt.show()
+
+
+
+# 10 Best Bowling Figures
+df['total_wickets'] = df['best_bowling_figure'].apply(lambda x : x.split('--')[0])
+df['total_wickets'] = df['total_wickets'].astype(int)
+bowling_figs = df.groupby('best_bowling')['total_wickets'].sum().sort_values(ascending=False).head(10)
+print(df.sort_values(by='total_wickets')[['best_bowling','best_bowling_figure']].head(10))
+sns.barplot(x = bowling_figs.values , y=bowling_figs.index,palette='pastel')
+plt.title('10 Best Bowling Figures')
 plt.tight_layout()
 plt.show()
 
