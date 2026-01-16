@@ -88,6 +88,14 @@ df = pd.read_csv('IPL.csv')
 # print(df[df['won_by'] =='Runs'].sort_values(by='margin',ascending=False)[['match_winner','won_by','margin']].head(1))
 
 
+
+
 # Which player had the highest individual score?
-print(df[df['highscore'] == df['highscore'].max()][['top_scorer','highscore']]
-)
+# print(df[df['highscore'] == df['highscore'].max()][['top_scorer','highscore']])
+
+
+
+# Which bowler had the best bowling figures?
+df['total_wickets'] = df['best_bowling_figure'].apply(lambda x : x.split('--')[0])
+df['total_wickets'] = df['total_wickets'].astype(int)
+print(df[df['total_wickets'] == df['total_wickets'].max()][['best_bowling','best_bowling_figure']])
