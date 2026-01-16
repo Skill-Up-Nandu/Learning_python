@@ -27,8 +27,16 @@ df = pd.read_csv('IPL.csv')
 
 
 # Toss Winner vs Match Winner
-tossCount = df[df['toss_winner'] == df['match_winner']]
-percentage = tossCount.shape[0]/df.shape[0]*100
-print(round(percentage,2))
+# tossCount = df[df['toss_winner'] == df['match_winner']]
+# percentage = tossCount.shape[0]/df.shape[0]*100
+# print(round(percentage,2))
+
+
+
+# How do teams win? (Runs vs Wickets)
+sns.countplot(x = df['won_by'],hue=df['won_by'],legend=False)
+plt.title('Teams Win BY')
+plt.ylabel('Matches')
+plt.show()
 
 
