@@ -85,7 +85,9 @@ df = pd.read_csv('IPL.csv')
 
 
 #  Who won the highest margin by runs?
-print(df[df['won_by'] =='Runs'].sort_values(by='margin',ascending=False)[['match_winner','won_by','margin']].head(1))
+# print(df[df['won_by'] =='Runs'].sort_values(by='margin',ascending=False)[['match_winner','won_by','margin']].head(1))
 
 
-
+# Which player had the highest individual score?
+print(df[df['highscore'] == df['highscore'].max()][['top_scorer','highscore']]
+)
