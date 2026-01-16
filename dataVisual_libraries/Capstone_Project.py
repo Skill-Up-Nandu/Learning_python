@@ -42,10 +42,21 @@ df = pd.read_csv('IPL.csv')
 
 
 # Most "Player of the Match" Awards
-mof_counts = df['player_of_the_match'].value_counts().head(10)
-sns.barplot(y=mof_counts.index , x=mof_counts.values ,palette='pastel')
-plt.title('Top Ten Man OF The Match Winners')
+# mof_counts = df['player_of_the_match'].value_counts().head(10)
+# sns.barplot(y=mof_counts.index , x=mof_counts.values ,palette='pastel')
+# plt.title('Top Ten Man OF The Match Winners')
+# plt.tight_layout()
+# plt.show()
+
+
+
+# 2 Top Scorers
+top_scorer = df.groupby('top_scorer')['highscore'].sum().sort_values(ascending=False).head(2)
+print(top_scorer)
+top_scorer.plot(kind='barh')
+plt.title('Top Two Scorer')
 plt.tight_layout()
 plt.show()
+
 
 
