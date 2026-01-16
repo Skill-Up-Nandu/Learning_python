@@ -10,8 +10,16 @@ df = pd.read_csv('IPL.csv')
 # print(df.isnull().sum())
 
 # Which team won the most matches?
-match_wins = df['match_winner'].value_counts()
-sns.barplot(y= match_wins.index , x = match_wins.values,palette='rainbow')
-plt.title('Match Winning Teams')
-plt.tight_layout()
+# match_wins = df['match_winner'].value_counts()
+# sns.barplot(y= match_wins.index , x = match_wins.values,palette='rainbow')
+# plt.title('Match Winning Teams')
+# plt.tight_layout()
+# plt.show()
+
+
+
+# Toss Decision Trends
+colors = ['green','red']
+sns.countplot(x = df['toss_decision'],palette=colors)
+plt.title('Toss Decison Trends')
 plt.show()
