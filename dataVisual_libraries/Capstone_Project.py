@@ -74,12 +74,18 @@ df = pd.read_csv('IPL.csv')
 
 
 # Most Matches Played by Venue
-venues = df['venue'].value_counts()
-print(venues)
-sns.barplot(x = venues.values ,y = venues.index ,hue=venues.values,legend=False)
-plt.tight_layout()
-plt.title('Most Matches Played By Venue')
-plt.show()
+# venues = df['venue'].value_counts()
+# print(venues)
+# sns.barplot(x = venues.values ,y = venues.index ,hue=venues.values,legend=False)
+# plt.tight_layout()
+# plt.title('Most Matches Played By Venue')
+# plt.show()
+
+
+
+
+#  Who won the highest margin by runs?
+print(df[df['won_by'] =='Runs'].sort_values(by='margin',ascending=False)[['match_winner','won_by','margin']].head(1))
 
 
 
