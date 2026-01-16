@@ -61,13 +61,24 @@ df = pd.read_csv('IPL.csv')
 
 
 # 10 Best Bowling Figures
-df['total_wickets'] = df['best_bowling_figure'].apply(lambda x : x.split('--')[0])
-df['total_wickets'] = df['total_wickets'].astype(int)
-bowling_figs = df.groupby('best_bowling')['total_wickets'].sum().sort_values(ascending=False).head(10)
-print(df.sort_values(by='total_wickets')[['best_bowling','best_bowling_figure']].head(10))
-sns.barplot(x = bowling_figs.values , y=bowling_figs.index,palette='pastel')
-plt.title('10 Best Bowling Figures')
+# df['total_wickets'] = df['best_bowling_figure'].apply(lambda x : x.split('--')[0])
+# df['total_wickets'] = df['total_wickets'].astype(int)
+# bowling_figs = df.groupby('best_bowling')['total_wickets'].sum().sort_values(ascending=False).head(10)
+# print(df.sort_values(by='total_wickets')[['best_bowling','best_bowling_figure']].head(10))
+# sns.barplot(x = bowling_figs.values , y=bowling_figs.index,palette='pastel')
+# plt.title('10 Best Bowling Figures')
+# plt.tight_layout()
+# plt.show()
+
+
+
+
+# Most Matches Played by Venue
+venues = df['venue'].value_counts()
+print(venues)
+sns.barplot(x = venues.values ,y = venues.index ,hue=venues.values,legend=False)
 plt.tight_layout()
+plt.title('Most Matches Played By Venue')
 plt.show()
 
 
