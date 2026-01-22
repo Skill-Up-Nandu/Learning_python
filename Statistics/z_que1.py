@@ -4,6 +4,12 @@
 # At 5% significant level, test the claim using a one sample z_test.
 # explain the question
 
+
+# Null hypothesis (H₀): μ = 70
+
+# Alternative hypothesis (H₁): μ != 70
+
+
 import numpy as np
 import pandas as pd
 from scipy.stats import norm
