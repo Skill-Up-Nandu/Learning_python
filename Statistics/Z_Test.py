@@ -23,7 +23,7 @@ print(f"P_Score : {round(p_value,2)}")
 
 if p_value < alpha :
     print("Reject The Null Hypothesis")
-    print(f"Reason : p_value {round(p_value,2)} is less than z_score {z_score}")
+    print(f"Reason : p_value {round(p_value,2)} is less than alpha {alpha}")
 else : 
     print("Accept the Null Hypothesis")
-    print(f"Reason : p_value {round(p_value,2)} is greater than z_score {z_score}")
+    print(f"Reason : p_value {round(p_value,2)} is greater than alpha {alpha}")
