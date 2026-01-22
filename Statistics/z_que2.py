@@ -20,7 +20,7 @@ z_score = (sam_mean - pop_mean) / (pop_std/np.sqrt(sam_size))
 print(z_score)
 
 #  for one tailed test
-p_value = 1 - norm.cdf(abs(z_score))
+p_value = 1 - norm.cdf(z_score)
 
 if p_value < alpha : 
     print("Reject The Null Hypothesis")
