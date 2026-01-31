@@ -8,7 +8,10 @@
 red = 3
 blue = 2
 total = red + blue
-first = red/total
-second = red/total
-prob = first * second *100
+# first = red/total
+# second = red/total
+# prob = first * second *100
+
+p_red = red/total
+prob = (p_red**2)*100
 print(f"Probability : ~{prob:.2f}%")
