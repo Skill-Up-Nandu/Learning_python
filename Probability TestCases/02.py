@@ -43,9 +43,10 @@
 
 cards = set(range(1,11))
 # print(cards)
-even = len({c for c in cards if c%2==0})
-gt7 = len({c for c in cards if c>7})
-overlap = len({c for c in cards if c%2==0 and c>7})
-# print(even , gt7, overlap)
-probability = (even + gt7 - overlap)/len(cards)
+even = {c for c in cards if c%2==0}
+gt7 = {c for c in cards if c>7}
+# print(even , gt7)
+union = even | gt7
+probability = len(union) /len(cards)
+print(f"Cards staisfying Conditions : {union}")
 print(f"Probability of picking a card (Even or Seven): {probability*100:.2f}%")
